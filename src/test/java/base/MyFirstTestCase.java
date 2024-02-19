@@ -5,8 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import utilities.ReadXlsData;
+
 public class MyFirstTestCase extends BaseTest {
-	  @Test(dataProvider = "testdata")
+	  @Test(dataProviderClass = ReadXlsData.class, dataProvider = "bvt-data" )
        public static void loginTest( String username, String pass) throws InterruptedException {
     	   
 		driver.findElement(By.xpath(properties.getProperty("signin_link"))).click();
@@ -19,14 +21,14 @@ public class MyFirstTestCase extends BaseTest {
 		driver.findElement(By.xpath(properties.getProperty("password_field"))).click();
 		
 	}
-	  @DataProvider(name = "testdata")
-	  public Object[][] tData(){
-		  
-		  return new Object[][] {
-			  {"otienogordon95@gmail.com","otieno95"},
-			  {"otienogordon95@gmail.com","otieno95"},
-			  {"otienogordon95@gmail.com","otieno"}
-		  };
-	  }
+//	  @DataProvider(name = "testdata")
+//	  public Object[][] tData(){
+//		  
+//		  return new Object[][] {
+//			  {"otienogordon95s@gmail.com","otieno95"},
+//			  {"otienogordon95@gmail.com","otienso95"},
+//			  {"otienogordon95@gmail.com","otieno95"}
+//		  };
+//	  }
 
 }
