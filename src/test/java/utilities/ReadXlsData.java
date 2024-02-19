@@ -23,6 +23,7 @@ public class ReadXlsData {
 	@DataProvider(name="bvt-data")
 	public String[][] getData( Method m) throws EncryptedDocumentException, IOException {
 		String ExcelsheetName= m.getName();
+		System.out.println(ExcelsheetName);
 		
 		File f = new File(System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\testdata.xlsx");
 		FileInputStream fis = new FileInputStream(f);
